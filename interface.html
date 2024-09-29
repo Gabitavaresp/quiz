@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Gatinhos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <style>
+        body {
+            background-color: #fdecef; /* Fundo rosa claro */
+            background-image: url('https://i.imgur.com/8G8CSkD.png'); /* Pata de gato como background */
+            background-repeat: repeat;
+            background-size: 100px 100px; /* Tamanho das patinhas */
+            font-family: 'Arial', sans-serif;
+            display: flex; /* Flexbox para centralizar */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* Altura completa da janela */
+            margin: 0; /* Remove margem padrão */
+        }
+
+        .quiz-container {
+            background-color: #fffbe4; /* Cor de fundo do container principal */
+            border: 2px solid #000;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%; /* Largura completa */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center; /* Centraliza o conteúdo dentro */
+        }
+
+        .quiz-header {
+            background-color: #f8c3c3; /* Cor de fundo do cabeçalho */
+            border: 2px solid #000;
+            border-radius: 15px 15px 0 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .quiz-header .icon {
+            background-color: #f8e5c3; /* Cor de fundo da barra de pesquisa */
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+
+        .quiz-title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d04e4e;
+        }
+
+        .quiz-content {
+            padding: 40px 20px;
+        }
+
+        .quiz-content h1 {
+            font-size: 28px;
+            color: #d04e4e;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .quiz-content img {
+            width: 100px;
+            margin-top: 20px;
+        }
+
+        .btn-custom {
+            background-color: #f8c3c3; /* Cor de fundo do botão */
+            color: #ffffff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block; /* Inline-block para controle de margem */
+            margin-top: 20px; /* Margem superior para separar do texto */
+        }
+
+        .btn-custom:hover {
+            background-color: #d04e4e; /* Cor ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container Principal do Quiz -->
+    <div class="quiz-container">
+        <!-- Cabeçalho do Quiz -->
+        <div class="quiz-header">
+            <div class="icon">
+                <!-- Ícone de Busca -->
+                <span>🔍</span>
+            </div>
+            <div class="quiz-title">QUIZ</div>
+            <div class="icon">
+                <!-- Ícone de Atualizar -->
+                <span>🔄</span>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal do Quiz -->
+        <div class="quiz-content">
+            <h1>QUAL GATINHO VOCÊ SERIA DE ACORDO COM SUA PERSONALIDADE</h1>
+            <!-- Botão de Início -->
+            <button class="btn-custom">COMEÇAR</button>
+            <!-- Imagem de Gatinho -->
+            <img src="https://i.imgur.com/6qCUbAc.png" alt="Gatinho Fofo">
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
