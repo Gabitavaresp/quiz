@@ -1,31 +1,31 @@
 
         body {
-            background-color: #fdecef; /* Fundo rosa claro */
-            background-image: url('img/background.jpeg'); /* Pata de gato como background */
+            background-color: #fdecef; 
+            background-image: url('img/background.jpeg'); 
             background-repeat: repeat;
-            background-size: 400px 870px; /* Tamanho das patinhas */
+            background-size: 400px 870px; 
             font-family: 'Arial', sans-serif;
-            display: flex; /* Flexbox para centralizar */
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
-            height: 100vh; /* Altura completa da janela */
-            margin: 0; /* Remove margem padrão */
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+            margin: 0; 
         }
 
         .quiz-container {
-            background-color: #fffbe4; /* Cor de fundo do container principal */
+            background-color: #fffbe4; 
             border: 2px solid #737171;
             border-radius: 15px;
             padding: 30px;
             max-width: 800px;
-            width: 100%; /* Largura completa */
+            width: 100%;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
-            text-align: center; /* Centraliza o conteúdo dentro */
+            text-align: center; 
         }
 
         .quiz-header {
-            background-color: #f8c3c3; /* Cor de fundo do cabeçalho */
+            background-color: #f8c3c3;
             border: 2px solid #737171;
             border-radius: 15px 15px 0 0;
             padding: 15px;
@@ -34,7 +34,7 @@
         }
 
         .quiz-header .icon {
-            background-color: #f8c3c3; /* Cor de fundo da barra de pesquisa */
+            background-color: #f8c3c3; 
             border-radius: 5px;
             padding: 5px 10px;
             margin-right: 10px;
@@ -65,39 +65,39 @@
         }
 
         .btn-container {
-            display: flex; /* Flexbox para centralização */
-            justify-content: center; /* Centraliza os elementos */
-            align-items: center; /* Alinha itens verticalmente */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
             margin-top: 20px;
-            position: relative; /* Necessário para a posição absoluta da imagem */
+            position: relative;
         }
 
         .button {
-            background-color: #d04e4e; /* Cor de fundo do botão */
+            background-color: #d04e4e;
             color: #ffffff;
             font-size: 18px;
             padding: 10px 20px;
             border-radius: 25px;
             border: none;
-            text-decoration: none; /* Remove a sublinha do link */
+            text-decoration: none; 
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .button:hover {
-            background-color: #f8c3c3; /* Cor de fundo ao passar o mouse */
-            color: #d04e4e; /* Cor do texto ao passar o mouse */
+            background-color: #f8c3c3;
+            color: #d04e4e; 
         }
 
         .image-container {
-            position: absolute; /* Para posicionar a imagem no canto */
-            right: -30px; /* Ajuste conforme necessário */
+            position: absolute; 
+            right: -30px; 
             bottom: -112px;
         }
 
         .image-container img {
-            width: 200px; /* Tamanho da imagem */
-            height: 200px; /* Altura da imagem */
+            width: 200px;
+            height: 200px;
             bottom: px;
         }
     
