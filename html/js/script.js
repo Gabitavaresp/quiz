@@ -1,84 +1,109 @@
-// Inicializa a pontuação de cada gato como zero
-let azulrusso = 0;
-let siames = 0;
-let mainecoon = 0;
-let persa = 0;
 
-// Inicializa a pontuação total
-if (localStorage.getItem('totalScore') === null) {
-    localStorage.setItem('totalScore', 0);
-}
+function nextQuestion(currentQuestion) {
+   
+    const currentElement = document.getElementById(`pergunta${currentQuestion}`);
+    const nextElement = document.getElementById(`pergunta${currentQuestion + 1}`);
 
-// Função para avançar para a próxima pergunta
-function nextPage(currentPage) {
-    const form = document.getElementById("quizForm");
-    const selectedAnswer = form.querySelector('input[name="answer"]:checked');
+   
+    currentElement.classList.remove('active');
 
-    // Verifica se o usuário escolheu uma resposta
-    if (selectedAnswer) {
-        // Aumenta a pontuação do gato escolhido
-        if (selectedAnswer.value === 'azulrusso') {
-            azulrusso++;
-        } else if (selectedAnswer.value === 'siames') {
-            siames++;
-        } else if (selectedAnswer.value === 'mainecoon') {
-            mainecoon++;
-        } else if (selectedAnswer.value === 'persa') {
-            persa++;
-        }
-
-        // Salva a pontuação total no localStorage
-        let totalScore = parseInt(localStorage.getItem('totalScore'));
-        totalScore += 1; // Cada resposta vale 1 ponto
-        localStorage.setItem('totalScore', totalScore);
-
-        // Vai para a próxima página do quiz
-        const nextPageUrl = `page${currentPage + 1}.html`;
-        window.location.href = nextPageUrl;
+   
+    if (nextElement) {
+        nextElement.classList.add('active');
     } else {
-        alert("Por favor, selecione uma resposta!"); // Alerta se nenhuma resposta for escolhida
+        
+        calculateResult();
     }
 }
 
-// Função para calcular e mostrar o resultado final
+
+
+
+
+
 function calculateResult() {
-    const form = document.getElementById("quizForm");
-    const selectedAnswer = form.querySelector('input[name="answer"]:checked');
+    const results = {
+        azulrusso: 0,
+        siames: 0,
+        mainecoon: 0,
+        persa: 0
+    };
 
-    // Verifica se o usuário escolheu uma resposta
-    if (selectedAnswer) {
-        // Vai para a página de resultado
-        window.location.href = "result.html";
-    } else {
-        alert("Por favor, selecione uma resposta!"); // Alerta se nenhuma resposta for escolhida
+    const questions = document.querySelectorAll('input[type="radio"]:checked');
+
+    questions.forEach((answer) => {
+        results[answer.value]++;
+    });
+
+    let highestCount = 0;
+    let finalResult = '';
+
+    // Verificando cada raça de gato com if
+    if (results.azulrusso > highestCount) {
+        highestCount = results.azulrusso;
+        finalResult = 'azulrusso';
     }
-}
-
-// Função para mostrar o resultado final na página de resultados
-function showResult() {
-    // Recupera as pontuações dos gatos
-    let azulrusso = parseInt(localStorage.getItem('azulrusso')) || 0;
-    let siames = parseInt(localStorage.getItem('siames')) || 0;
-    let mainecoon = parseInt(localStorage.getItem('mainecoon')) || 0;
-    let persa = parseInt(localStorage.getItem('persa')) || 0;
-
-    // Decide qual gato mostrar baseado na pontuação
-    if (azulrusso > siames && azulrusso > mainecoon && azulrusso > persa) {
-        window.location.href = "result1.html"; // Gato Azul Russo
-    } else if (siames > azulrusso && siames > mainecoon && siames > persa) {
-        window.location.href = "result2.html"; // Gato Siames
-    } else if (mainecoon > azulrusso && mainecoon > siames && mainecoon > persa) {
-        window.location.href = "result3.html"; // Gato Maine Coon
-    } else {
-        window.location.href = "result4.html"; // Gato Persa ou outros
+    if (results.siames > highestCount) {
+        highestCount = results.siames;
+        finalResult = 'siames';
     }
+    if (results.mainecoon > highestCount) {
+        highestCount = results.mainecoon;
+        finalResult = 'mainecoon';
+    }
+    if (results.persa > highestCount) {
+        highestCount = results.persa;
+        finalResult = 'persa';
+    }
+
+    window.location.href = `resultado.html?resultado=${finalResult}`;
 }
 
-// Função para reiniciar o quiz
-function resetQuiz() {
-    localStorage.setItem('totalScore', 0); // Reseta a pontuação total
-    azulrusso = 0; // Reseta a pontuação do Azul Russo
-    siames = 0; // Reseta a pontuação do Siames
-    mainecoon = 0; // Reseta a pontuação do Maine Coon
-    persa = 0; // Reseta a pontuação do Persa
+
+
+
+function shuffleOptions(questionId) {
+    const optionsContainer = document.getElementById(`options${questionId}`);
+    const options = Array.from(optionsContainer.children);
+    
+    // Embaralha as opções
+    for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+    }
+
+    // Remove as opções atuais do DOM
+    optionsContainer.innerHTML = '';
+
+    // Adiciona as opções embaralhadas de volta ao DOM
+    options.forEach(option => optionsContainer.appendChild(option));
 }
+
+
+
+function startQuiz() {
+    // Embaralha as opções de cada pergunta
+    for (let i = 1; i <= 7; i++) { // Supondo que você tenha 7 perguntas
+        shuffleOptions(i);
+    }
+
+    // Outras inicializações do quiz, se necessário
+}
+
+// Chame a função startQuiz quando o quiz for iniciado
+startQuiz();
+
+
+
+
+function playMusic() {
+    const music = document.getElementById("background-music");
+    music.play().catch(error => {
+        console.log("Erro ao tentar reproduzir a música: ", error);
+    });
+}
+
+
+window.onload = function() {
+    playMusic();
+};
