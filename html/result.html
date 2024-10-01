@@ -8,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesResult.css">
+    <script src="js/script.js" defer></script>
     <style>
         body {
             background-color: #fdecef; 
@@ -26,39 +27,9 @@
 
     </style>
 </head>
-<body>
-    <div class="quiz-container">
-        <div class="quiz-header">
-            <div class="icon">
-                <span>🤍</span>
-            </div>
-            <div class="quiz-title">RESULTADO</div>
-            <div class="icon">
-                <span>🤍</span>
-            </div>
-        </div>
-
-
-
-        <div class="quiz-content">
-            <h1>VOCÊ SERIA TODOS OS GATINHOS!</h1>
-            
-            
-            
-
-            
-            <p>Uau! Parece que você empatou a resposta com todos os gatinhos!<br> Você realmente é um gateiro, e te classificamos como todos eles!</p>
-
-        </div>
-
-
-
-
-        <div class="btn-container">
-            <a href="interface.html" class="button">Novamente</a>
-        </div>
-        
-    </div>
+<body onload="showResult()">
+    <h1>Seu Resultado</h1>
+    <div id="resultMessage"></div>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

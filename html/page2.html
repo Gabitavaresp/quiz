@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de Gatinhos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/stylesInter.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
     <style>
     body {
-            background-color: #fdecef; 
+        background-color: #fdecef; 
             background-image: url('img/background.jpeg'); 
             background-repeat: repeat;
             background-size: 400px 870px; 
@@ -23,43 +23,43 @@
     </style>
 </head>
 <body>
-    <div class="pagina" id="pagina2">
-      
-            <div class="quiz-header">
-                <div class="text">O QUE VOCÊ GOSTA DE FAZER NO <br> SEU TEMPO LIVRE?</div>
-                <div class="question-number">2</div>
-            </div>
-            <hr>
-            <div class="image">
-                
-                <img src="img/gatinho2.jpg" alt="Imagem do quiz">
-            </div>
-            <div class="options">
+
+
+
+    <div class="quiz-box">
+        <div class="quiz-header">
+            <div class="text">O QUE VOCÊ GOSTA DE FAZER NO <br> SEU TEMPO LIVRE?</div>
+            <div class="question-number">2</div>
+        </div>
+        <hr>
+        <div class="image">
+            <img src="img/gatinho2.jpg" alt="Imagem do quiz">
+        </div>
+        <div class="options" id="quizForm">
+            <div id="answer-buttons">
                 <div class="option">
-                    <input type="radio" name="q2" value="persa">
-                    A. Gosto de ficar em casa.
+                    <input type="radio" class="btn" name="answer" value="azulrusso">A. Gosto de ficar em casa.
                 </div>
-                <div class="option">
-                    <input type="radio" name="q2" value="siames">
-                    B. Uso meu tempo livre para praticar atividade físíca.
-                </div>
-                <div class="option">
-                    <input type="radio" name="q2" value="azulrusso">
-                    C. Gosto de passar o tempo com a minha familia. 
+                <div class="option"> 
+                    <input type="radio" class="btn" name="answer" value="siames">B. Uso meu tempo livre para praticar atividade físíca.
                 </div>
                 <div class="option">
-                    <input type="radio" name="q2" value="mainecoon">
-                    D. Gosto de sair com os meus amigos. 
+                    <input type="radio" class="btn" name="answer" value="mainecoon">C. Gosto de passar o tempo com a minha familia.
+                </div>
+                <div class="option">
+                    <input type="radio" class="btn" name="answer" value="persa">D. Gosto de sair com os meus amigos.
                 </div>
             </div>
-            <div class="d-flex justify-content-end mt-4">
-                <div class="button">
-                    <button class="button" onclick="window.location.href='page3.html'">Avançar</button>
-                </div>
-                
+            
+        </div>
+        <div class="d-flex justify-content-end mt-4">
+            <div class="button">
+                <button class="button" onclick="nextPage(2)">Avançar</button>
             </div>
-       
+        </div>
     </div>
+        
+ 
     
 
      <!--SCRIPT DO BOOTSTRAP E JS-->

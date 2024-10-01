@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de Gatinhos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/stylesInter.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
     <style>
     body {
@@ -35,27 +35,26 @@
                 <img src="img/gatinho7.jpg" alt="Imagem do quiz">
             </div>
     
-            <div class="options">
-                <div class="option">
-                    <input type="radio" name="q7" value="persa">
-                    A. Preto.
+            <div class="options" id="quizForm">
+                <div id="answer-buttons">
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="azulrusso">A. Preto.
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="siames">B. Azul.
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="mainecoon">C. Branco.
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="persa">D. Verde.
+                    </div>
                 </div>
-                <div class="option">
-                    <input type="radio" name="q7" value="azulrusso">
-                    B. Azul.
-                </div>
-                <div class="option">
-                    <input type="radio" name="q7" value="siames">
-                    C. Branco. 
-                </div>
-                <div class="option">
-                    <input type="radio" name="q7" value="mainecoon">
-                    D. Verde. 
-                </div>
+                
             </div>
             <div class="d-flex justify-content-end mt-4">
                 <div class="button">
-                    <button class="button" onclick="calcularResultado()">Avançar</button>
+                    <button class="button" onclick="calculateResult()"">Avançar</button>
                 </div>
                 
             </div>
@@ -67,8 +66,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-     
-    <script src="js/script.js"></script>
     
 </body>
 </html>

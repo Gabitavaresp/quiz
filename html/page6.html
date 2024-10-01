@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de Gatinhos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/stylesInter.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
     <style>
     body {
@@ -35,27 +35,26 @@
                 <img src="img/gatinho6.jpg" alt="Imagem do quiz">
             </div>
         
-            <div class="options">
-                <div class="option">
-                    <input type="radio" name="q6" value="azulrusso">
-                    A. Castelo.
+            <div class="options" id="quizForm">
+                <div id="answer-buttons">
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="azulrusso">A. Castelo.
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="siames">B. Fazenda.
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="mainecoon">C. Caverna. 
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="btn" name="answer" value="persa">D. Floresta. 
+                    </div>
                 </div>
-                <div class="option">
-                    <input type="radio" name="q6" value="persa">
-                    B. Fazenda.
-                </div>
-                <div class="option">
-                    <input type="radio" name="q6" value="siames">
-                    C. Caverna. 
-                </div>
-                <div class="option">
-                    <input type="radio" name="q6" value="mainecoon">
-                    D. Floresta. 
-                </div>
+                
             </div>
             <div class="d-flex justify-content-end mt-4">
                 <div class="button">
-                    <button class="button" onclick="window.location.href='page7.html'">Avançar</button>
+                    <button class="button" onclick="nextPage(6)">Avançar</button>
                 </div>
                 
             </div>
